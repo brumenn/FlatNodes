@@ -11,7 +11,6 @@
 	"Version": 1,
 	"VersionName": "1.0",
 	"EngineVersion": "5.0.0",
-	"WhitelistPlatforms": [ "Win64", "Win32", "Mac", "XboxOne", "PS4", "IOS", "Android", "HTML5", "Linux" ],
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
@@ -20,7 +19,9 @@
 		{
 			"Name": "FlatNodes",
 			"Type": "Editor",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"WhitelistPlatforms": [ "Win64", "Win32", "Mac", "Linux" ]
+
 		}
 	]
 }
