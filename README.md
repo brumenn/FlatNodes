@@ -1,3 +1,5 @@
+# Flat Nodes
+
 A minimalist style for Unreal Engine graph nodes. This plugin add a simplified visual appearance, flatter, that makes graphs clearer and more readable.
 
 
