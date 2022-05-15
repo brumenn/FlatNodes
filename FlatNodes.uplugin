@@ -1,0 +1,26 @@
+{
+	"FriendlyName": "Flat Nodes",
+	"Category": "Editor",
+	"Description": "A minimalist style for nodes, flatter, that makes graphs clearer and more readable.",
+	"CreatedBy": "Nicolas Castelli",
+	"CreatedByURL": "https://github.com/brumenn",
+	"DocsURL": "https://github.com/brumenn/FlatNodes",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/b719437f3fb54c259b34227363df8cab",
+	"SupportURL": "https://github.com/brumenn/FlatNodes/issues",
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"EngineVersion": "5.0.0",
+	"WhitelistPlatforms": [ "Win64", "Win32", "Mac", "XboxOne", "PS4", "IOS", "Android", "HTML5", "Linux" ],
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "FlatNodes",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
