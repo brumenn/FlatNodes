@@ -3,18 +3,19 @@
 #include "FlatNodes.h"
 #include "Interfaces/IPluginManager.h"
 #include "Slate/SlateGameResources.h"
-#include "Styling/SlateStyleMacros.h"
 #include "EditorStyleSet.h"
 
 #define LOCTEXT_NAMESPACE "FFlatNodesModule"
 
 #define RootToContentDir Style->RootToContentDir
 
+#define IMAGE_BRUSH( RelativePath, ... ) FSlateImageBrush( RootToContentDir( RelativePath, TEXT(".png") ), __VA_ARGS__ )
+#define BOX_BRUSH( RelativePath, ... ) FSlateBoxBrush( RootToContentDir( RelativePath, TEXT(".png") ), __VA_ARGS__ )
 
 void FFlatNodesModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
-	
+
 	ApplyEditorStyle();
 }
 
@@ -62,6 +63,9 @@ void FFlatNodesModule::ApplyEditorStyle()
 
 	Style->Set("PhysicsAssetEditor.Graph.Node.Shadow", new BOX_BRUSH("Graph/RegularNode_shadow", FMargin(18.0f / 64.0f)));
 }
+
+#undef IMAGE_BRUSH
+#undef BOX_BRUSH
 
 #undef LOCTEXT_NAMESPACE
 	
