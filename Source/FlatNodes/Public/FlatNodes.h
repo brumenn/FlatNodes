@@ -13,5 +13,9 @@ public:
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
 
+#if WITH_EDITOR
+
 	void ApplyEditorStyle();
+
+#endif
 };

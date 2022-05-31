@@ -25,6 +25,7 @@ void FFlatNodesModule::ShutdownModule()
 	// we call this function before unloading the module.
 }
 
+#if WITH_EDITOR
 void FFlatNodesModule::ApplyEditorStyle()
 {
 	FSlateStyleSet* Style = (FSlateStyleSet*)&FEditorStyle::Get();
@@ -65,6 +66,7 @@ void FFlatNodesModule::ApplyEditorStyle()
 
 	FSlateApplication::Get().GetRenderer()->ReloadTextureResources();
 }
+#endif
 
 #undef IMAGE_BRUSH
 #undef BOX_BRUSH
