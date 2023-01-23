@@ -1,4 +1,4 @@
-// Copyright 2022 Les Androïds Associés. All Rights Reserved.
+// Copyright 2023 Les Androïds Associés. All Rights Reserved.
 
 #pragma once
 
