@@ -40,6 +40,7 @@ public class FlatNodes : ModuleRules
 				"SlateCore",
 				"Projects",
 				"EditorStyle",
+				"DeveloperSettings"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

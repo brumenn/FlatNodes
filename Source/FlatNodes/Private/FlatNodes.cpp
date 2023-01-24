@@ -1,6 +1,7 @@
-// Copyright 2022 Les Androïds Associés. All Rights Reserved.
+// Copyright 2023 Les Androïds Associés. All Rights Reserved.
 
 #include "FlatNodes.h"
+#include "FlatNodesSettings.h"
 #include "Interfaces/IPluginManager.h"
 #include "Slate/SlateGameResources.h"
 #include "Styling/SlateStyleMacros.h"
@@ -31,12 +32,25 @@ void FFlatNodesModule::ApplyEditorStyle()
 	FSlateStyleSet* Style = (FSlateStyleSet*)&FEditorStyle::Get();
 	Style->SetContentRoot(IPluginManager::Get().FindPlugin("FlatNodes")->GetBaseDir() / TEXT("Resources"));
 
+	UFlatNodesSettings* FlatNodesSettings = GetMutableDefault<UFlatNodesSettings>();
+	const bool bHeaderUseGradient = FlatNodesSettings->bHeaderUseGradient;
+
 	Style->Set("Graph.PlayInEditor", new BOX_BRUSH("Graph/RegularNode_shadow_selected", FMargin(18.0f / 64.0f)));
 
 	Style->Set("Graph.Node.Body", new BOX_BRUSH("Graph/RegularNode_body", FMargin(16.f / 64.f, 25.f / 64.f, 16.f / 64.f, 16.f / 64.f)));
 	Style->Set("Graph.Node.TintedBody", new BOX_BRUSH("Graph/TintedNode_body", FMargin(16.f / 64.f, 25.f / 64.f, 16.f / 64.f, 16.f / 64.f)));
 	Style->Set("Graph.Node.TitleGloss", new BOX_BRUSH("Graph/RegularNode_title_gloss", FMargin(12.0f / 64.0f)));
-	Style->Set("Graph.Node.ColorSpill", new BOX_BRUSH("Graph/RegularNode_color_spill", FMargin(8.0f / 64.0f, 3.0f / 32.0f, 0, 0)));
+	if (bHeaderUseGradient)
+	{
+		Style->Set("Graph.Node.ColorSpill", new BOX_BRUSH("Graph/RegularNode_color_spill", FMargin(8.0f / 64.0f, 3.0f / 32.0f, 0, 0)));
+	}
+	else
+	{
+		FSlateBrush* HeaderBrush = FlatNodesSettings->CreateHeaderBrush();
+		HeaderBrush->Margin = FMargin(0, -1.0f / 32.0f, -3.0f / 20.0f, 0);
+		HeaderBrush->DrawAs = ESlateBrushDrawType::Box;
+		Style->Set("Graph.Node.ColorSpill", HeaderBrush);
+	}
 	Style->Set("Graph.Node.TitleHighlight", new BOX_BRUSH("Graph/RegularNode_title_highlight", FMargin(16.0f / 64.0f, 1.0f, 16.0f / 64.0f, 0.0f)));
 
 	Style->Set("Graph.Node.ShadowSize", FVector2D(12, 12));
