@@ -1,4 +1,4 @@
-// Copyright 2023 Les Androïds Associés. All Rights Reserved.
+// Copyright Les Androïds Associés. All Rights Reserved.
 
 #include "FlatNodesSettings.h"
 #include "Materials/MaterialInstanceDynamic.h"

@@ -1,4 +1,4 @@
-// Copyright 2022 Les Androïds Associés. All Rights Reserved.
+// Copyright Les Androïds Associés. All Rights Reserved.
 
 using UnrealBuildTool;
 
